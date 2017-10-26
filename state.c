@@ -18,7 +18,7 @@ void					state_reset(state_t *state) {
 }
 
 void					state_stop(state_t *state) {
-	state->id = ~0;
+	state->id = (id_t)~0;
 }
 
 bool					state_isstopped(state_t state) {
