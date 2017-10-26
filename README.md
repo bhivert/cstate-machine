@@ -1,1 +1,1 @@
-c state machine like concepte
+c state machine like concept
