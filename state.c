@@ -27,6 +27,6 @@ bool					state_isstopped(state_t state) {
 
 void					state_exec(state_t *state) {
 	if (!state_isstopped(*state)) {
-		state->id = state->fcts[state->id](*state);
+		state->id = state->fcts[state->id](state->id);
 	}
 }

@@ -12,7 +12,7 @@
 
 typedef unsigned short	id_t;
 typedef struct state_s	state_t;
-typedef id_t			(state_fct_t)(state_t);
+typedef id_t			(state_fct_t)(id_t);
 
 struct					state_s {
 	id_t				id;
