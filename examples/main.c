@@ -1,31 +1,45 @@
-/* 
- * File:   main.c
- * Author: bhivert
- *
- * Created on June 25, 2017, 7:48 PM
- */
+/*
+* main.c is part of a project.
+* Copyright (C) 2021 Benoit Hivert <hivert.benoit@gmail.com>
+*
+* This project is free software: you can redistribute it and/or modify
+* it under the terms of the GNU Lesser General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* This project is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU Lesser General Public License for more details.
+*
+* You should have received a copy of the GNU Lesser General Public License
+* along with this project. If not, see <http://www.gnu.org/licenses/>
+*
+* Created on 2021/03/27 at 15:42:12 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2021/03/27 at 15:47:36 by Benoit Hivert <hivert.benoit@gmail.com>
+*/
 
 #include "state.h"
 #include <stdio.h>
 
 static unsigned int	tmp;
 
-static id_t	fct0(state_t s) {
-	printf("state %d\n", s.id);
+static id_t	fct0(id_t id) {
+	printf("state %d\n", id);
 	tmp = 0;
-	return (++s.id);
+	return (++id);
 }
 
-static id_t	fct1(state_t s) {
-	printf("state %d\n", s.id);
+static id_t	fct1(id_t id) {
+	printf("state %d\n", id);
 	if (++tmp < 3)
-		return (s.id);
-	return (++s.id);
+		return (id);
+	return (++id);
 }
 
-static id_t	fct2(state_t s) {
-	printf("state %d\n", s.id);
-	return (++s.id);
+static id_t	fct2(id_t id) {
+	printf("state %d\n", id);
+	return (++id);
 }
 
 static state_fct_t	* _fcts[] = {
